@@ -51,7 +51,7 @@ export default function AboutPage() {
               </p>
               <p className="font-semibold text-ink">
                 We look forward to welcoming and championing you to victory in one of our services.
-                Your battle is the Lord's!
+                Your battle is the Lord&apos;s!
               </p>
             </div>
           </div>

@@ -31,7 +31,7 @@ export default function GivePage() {
                 <CloudCog size={20} />
               </div>
               <h3 className="text-lg font-semibold font-sans mb-2.5">Give online</h3>
-              <p className="text-[14.5px] text-ink-soft">Via the Tithe.ly app or website. It's quick, easy, and secure.</p>
+              <p className="text-[14.5px] text-ink-soft">Via the Tithe.ly app or website. It&apos;s quick, easy, and secure.</p>
               <a href="https://giving.winners-chapel.org.uk/" className="inline-block mt-4 text-[13px] font-semibold text-gold-deep border-b border-gold">
                 Give via Online →
               </a>
@@ -45,7 +45,7 @@ export default function GivePage() {
               </div>
               <h3 className="text-lg font-semibold font-sans mb-2.5">Use a giving envelope</h3>
               <p className="text-[14.5px] text-ink-soft">
-                Available during any of our services — you'll find these at the back of the church.
+                Available during any of our services — you&apos;ll find these at the back of the church.
               </p>
             </div>
           </div>

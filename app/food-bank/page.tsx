@@ -34,8 +34,8 @@ export default function FoodBankPage() {
             <div className="eyebrow text-sage mb-3.5">How it works</div>
             <h2 className="text-[30px] mb-5">Support the {churchConfig.shortName} food bank</h2>
             <p className="text-base text-ink-soft mb-8">
-              [Replace with the real schedule and location — e.g. "Every third Sunday, we extend a hand of hope through our
-              food bank at {churchConfig.address.line1}."] Your generous donation helps fill bags with essential food items
+              [Replace with the real schedule and location — e.g. &quot;Every third Sunday, we extend a hand of hope through our
+              food bank at {churchConfig.address.line1}.&quot;] Your generous donation helps fill bags with essential food items
               for those in need.
             </p>
             <div className="flex flex-col gap-6">
@@ -75,7 +75,7 @@ export default function FoodBankPage() {
           <div className="eyebrow text-sage mb-3.5">This week</div>
           <h3 className="text-2xl mb-2.5">Bring a bag, change a family&apos;s week</h3>
           <p className="text-[15px] text-ink-soft mb-6">
-            [Replace with the real collection schedule and location, e.g. "{churchConfig.address.line1}, {churchConfig.address.line2}."]
+            [Replace with the real collection schedule and location, e.g. &quot;{churchConfig.address.line1}, {churchConfig.address.line2}.&quot;]
           </p>
           <a href="/service-times" className="inline-flex items-center gap-2 text-sm font-semibold px-[22px] py-[11px] rounded-[3px] bg-sage text-white hover:bg-sage/90">
             See service times

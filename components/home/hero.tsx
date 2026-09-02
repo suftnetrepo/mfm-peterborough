@@ -26,7 +26,12 @@ export function Hero() {
   const [idx, setIdx] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [lbIdx, setLbIdx] = useState(0);
+  const [imgErrors, setImgErrors] = useState<Set<string>>(new Set());
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  function markImgError(url: string) {
+    setImgErrors(prev => new Set(prev).add(url));
+  }
 
   useEffect(() => {
     if (lightbox) return;
@@ -72,13 +77,10 @@ export function Hero() {
             style={{ background: 'linear-gradient(to right, rgba(10,4,26,0.94) 0%, rgba(10,4,26,0.88) 50%, rgba(10,4,26,0.80) 100%)' }}
           />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-8 py-16 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+        <div className="relative max-w-[1200px] mx-auto px-1 py-16 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
 
           {/* Left — text */}
           <div>
-            <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-gold mb-6">
-              Mountain of Fire and Miracles Ministries — Peterborough
-            </div>
             <h1 className="font-display text-white font-semibold leading-[1.06] mb-5"
               style={{ fontSize: 'clamp(34px, 4vw, 52px)' }}>
               Encounter God.
@@ -128,7 +130,7 @@ export function Hero() {
               }}
               aria-label="View full flyer"
             >
-              {current.secure_url ? (
+              {current.secure_url && !imgErrors.has(current.secure_url) ? (
                 <Image
                   key={current.secure_url}
                   src={current.secure_url}
@@ -137,6 +139,7 @@ export function Hero() {
                   sizes="360px"
                   className="object-cover"
                   priority={idx === 0}
+                  onError={() => markImgError(current.secure_url!)}
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center"
@@ -189,15 +192,22 @@ export function Hero() {
           {/* Full-size flyer */}
           <div className="relative rounded-md overflow-hidden shadow-2xl"
             style={{ maxHeight: '88vh', maxWidth: '520px', width: '90vw', aspectRatio: '3/4' }}>
-            {lbCurrent.secure_url && (
+            {lbCurrent.secure_url && !imgErrors.has(lbCurrent.secure_url) ? (
               <Image
+                key={lbCurrent.secure_url}
                 src={lbCurrent.secure_url}
                 alt={lbCurrent.title || 'MFM flyer'}
                 fill
                 sizes="520px"
                 className="object-cover"
                 priority
+                onError={() => markImgError(lbCurrent.secure_url!)}
               />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg,#3A0870,#1A0A2E)' }}>
+                <span className="font-display text-white/50 text-lg px-4 text-center">{lbCurrent.title}</span>
+              </div>
             )}
           </div>
 

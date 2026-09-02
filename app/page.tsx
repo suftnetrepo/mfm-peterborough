@@ -8,7 +8,10 @@ import { TestimonyBand } from '@/components/home/testimony-band';
 import { churchConfig } from '@/church.config';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  // No page-specific title here — the home page should just read "MFM
+  // Peterborough" in the tab/search result, which is the root layout's
+  // title.default. Every other page gets "<Page> — MFM Peterborough" via
+  // the title.template in app/layout.tsx.
   description: churchConfig.tagline
 };
 

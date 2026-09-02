@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { MapPin, Phone, Mail, HeartHandshake, MessageCircle, Clock } from 'lucide-react';
 import { ContactFormSection } from './contact-form-section';
-import { ContactInfo } from './contact-info';
+import { AddressValue, PhoneValue, EmailValue } from './contact-info';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -74,22 +74,14 @@ export default function ContactPage() {
             <h2 className="font-display text-[26px] font-semibold text-ink mb-8">Visit or reach us</h2>
             <div className="flex flex-col gap-7">
               <ContactRow Icon={MapPin} label="Address">
-                <ContactInfo />
+                <AddressValue />
               </ContactRow>
               <ContactRow Icon={Phone} label="Phone">
-                <PhoneInfo />
+                <PhoneValue />
               </ContactRow>
               <ContactRow Icon={Mail} label="Email">
-                <EmailInfo />
+                <EmailValue />
               </ContactRow>
-            </div>
-
-            {/* MFM prayer line callout */}
-            <div className="mt-10 bg-indigo rounded-lg p-6 text-white">
-              <div className="text-[11px] font-mono font-medium tracking-[0.12em] uppercase text-gold mb-2">GO's Prayer Line</div>
-              <p className="text-[13.5px] text-[#C5B8E0] leading-[1.7] mb-1">2nd &amp; 4th Saturdays · 11:00pm – midnight</p>
-              <p className="text-[13.5px] text-white font-semibold">0330 606 0530</p>
-              <p className="text-[12px] text-[#C5B8E0] mt-1">Access code: 906 883 088 — press # to join</p>
             </div>
           </div>
           <ContactFormSection />
@@ -110,17 +102,5 @@ function ContactRow({ Icon, label, children }: { Icon: React.ComponentType<{ siz
         {children}
       </div>
     </div>
-  );
-}
-
-function PhoneInfo() {
-  return <p className="text-[14.5px] text-ink-soft">[Phone — to be confirmed]</p>;
-}
-
-function EmailInfo() {
-  return (
-    <a href="mailto:mfmpeterborough@gmail.com" className="text-[14.5px] text-indigo hover:text-indigo-deep">
-      mfmpeterborough@gmail.com
-    </a>
   );
 }

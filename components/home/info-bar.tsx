@@ -24,7 +24,7 @@ export function InfoBar() {
 
   return (
     <div className="w-full bg-[#F5F0E8] py-5">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto ">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {ITEMS.map(({ icon: Icon, iconBg, iconColor, label }, i) => (
           <div key={label} className="bg-white rounded-lg px-5 py-4 flex items-center gap-4 shadow-sm border border-[rgba(0,0,0,0.07)]">

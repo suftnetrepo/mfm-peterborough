@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { PageHeader } from '@/components/layout/page-header';
-import { TeamGrid } from './team-grid';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -86,17 +85,6 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="bg-paper-alt px-8 py-16">
-        <div className="max-w-[1160px] mx-auto">
-          <div className="text-center mb-14">
-            <div className="eyebrow text-gold-deep mb-3.5">Leadership</div>
-            <h2 className="font-display text-[30px]">Meet the team</h2>
-          </div>
-          <TeamGrid />
         </div>
       </section>
     </main>

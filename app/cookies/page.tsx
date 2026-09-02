@@ -11,7 +11,7 @@ const LAST_UPDATED = 'September 2026';
 
 export default async function CookiesPage() {
   const settings = await getChurchSettings();
-  const email = settings?.email || 'mfmpeterborough@gmail.com';
+  const email = settings?.data?.email || 'mfmpeterborough@gmail.com';
 
   return (
     <main>

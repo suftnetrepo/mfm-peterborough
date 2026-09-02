@@ -12,10 +12,10 @@ const LAST_UPDATED = 'September 2026';
 
 export default async function PrivacyPolicyPage() {
   const settings = await getChurchSettings();
-  const email = settings?.email || 'mfmpeterborough@gmail.com';
-  const phone = settings?.mobile;
-  const address = settings?.address
-    ? `${settings.address.addressLine1}, ${settings.address.town}, ${settings.address.postcode}`
+  const email = settings?.data?.email || 'mfmpeterborough@gmail.com';
+  const phone = settings?.data?.mobile;
+  const address = settings?.data?.address
+    ? `${settings.data.address.addressLine1}, ${settings.data.address.town}, ${settings.data.address.postcode}`
     : `${churchConfig.address.line1}, ${churchConfig.address.line2}`;
 
   return (

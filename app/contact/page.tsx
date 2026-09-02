@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { MapPin, Phone, Mail, HeartHandshake, MessageCircle, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, HeartHandshake, MessageCircle, Clock, type LucideIcon } from 'lucide-react';
 import { ContactFormSection } from './contact-form-section';
 import { AddressValue, PhoneValue, EmailValue } from './contact-info';
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
           <h1 className="font-display text-[42px] font-semibold text-white mb-4">Contact Us</h1>
           <p className="text-[#C5B8E0] text-[16px] leading-[1.75]">
             We would love to hear from you. Whether you have a question, a prayer need, or simply
-            want to find out more about MFM Peterborough, we're here to help.
+            want to find out more about MFM Peterborough, we&apos;re here to help.
           </p>
         </div>
       </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
   );
 }
 
-function ContactRow({ Icon, label, children }: { Icon: React.ComponentType<{ size: number; className?: string }>; label: string; children: React.ReactNode }) {
+function ContactRow({ Icon, label, children }: { Icon: LucideIcon; label: string; children: React.ReactNode }) {
   return (
     <div className="flex gap-4">
       <div className="w-10 h-10 rounded-full bg-sage-soft flex items-center justify-center shrink-0 mt-0.5">
